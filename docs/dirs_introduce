@@ -1,0 +1,9 @@
+common:公共的类方法
+libs：基本业务层的代码库包
+configs：配置包
+data：数据/用例excel
+logs：日志文件
+testCase：测试用例
+report：报告
+docs：项目相关文件
+utils：常规方法包
