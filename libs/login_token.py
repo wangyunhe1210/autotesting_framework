@@ -1,27 +1,34 @@
 # -*- coding:utf-8 -*-
 import os
 import requests
-import yaml
+from utils import yaml_handle
 
 root_path = os.path.dirname(__file__)
 name = os.path.join(root_path, 'access_token.yaml')
 
-def get_access_token(company_id='ww9c395f7fc48d9866', secret='P4q05ResCx5qbGF8msryzamVi2K8yCvCDwBDEonqN7s'):
+
+def get_access_token(file_name):
+    company_id = yaml_handle.read_yaml(file_name)['login_info']['corpid']
+    secret = yaml_handle.read_yaml(file_name)['login_info']['corpsecret']
     payload = {'corpid': company_id, 'corpsecret': secret}
     res = requests.get('https://qyapi.weixin.qq.com/cgi-bin/gettoken', payload)
     return res.json()['access_token']
 
 
-def write_yaml(file_name, datas):
-    with open(file_name, 'w', encoding='utf8') as f:
-        yaml.dump(datas, f)
+def write_access_token(file_name):
+    data = {'token': get_access_token(file_name)}
+    yaml_handle.write_yaml(file_name, data)
 
 
-def read_yaml(file_name):
-    with open(file_name, 'r', encoding='utf8') as f:
-        yaml.safe_load(f)
+def update_access_token(file_name):
+    data = {'token': get_access_token(file_name)}
+    yaml_handle.update_yaml(file_name, data)
+
+
+def read_access_token(file_name):
+    access_token = yaml_handle.read_yaml(file_name)['token']
+    return access_token
 
 
 if __name__ == '__main__':
-    data = {'token': get_access_token()}
-    write_yaml(name, data)
+    update_access_token(name)
