@@ -5,10 +5,10 @@ import os
 root_path = os.path.dirname(__file__)
 name = os.path.join(root_path, 'test.xlsx')
 
-# wb = openpyxl.Workbook()
+wb = openpyxl.Workbook()
 # wb.save('test.xlsx')
 
-wb = openpyxl.load_workbook(name)
-w1 = wb.title
-print(w1)
+wb1 = openpyxl.load_workbook(name)
+ws = wb.active
+
 

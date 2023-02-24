@@ -2,9 +2,9 @@
 import os
 import requests
 from utils import yaml_handle
+from configs import dir_path
 
-root_path = os.path.dirname(__file__)
-name = os.path.join(root_path, 'access_token.yaml')
+name = os.path.join(dir_path.configs_path, 'access_token.yaml')
 
 
 def get_access_token(file_name):
@@ -51,4 +51,4 @@ def read_access_token(file_name):
 
 
 if __name__ == '__main__':
-    update_access_token(name)
+    print(read_access_token(name))
