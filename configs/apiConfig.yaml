@@ -1,4 +1,8 @@
 Login: #模块级别
   login: #函数（接口级别）
-    url:
-    method:
+    url: None
+    method: None
+MemberManagement:
+  read_member:
+    url: cgi-bin/user/get
+    method: GET

@@ -51,4 +51,4 @@ def read_access_token(file_name):
 
 
 if __name__ == '__main__':
-    print(read_access_token(name))
+    update_access_token(name)
