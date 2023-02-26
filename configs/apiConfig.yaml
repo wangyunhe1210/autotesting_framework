@@ -1,7 +1,7 @@
 Login: #模块级别
-  login: #函数（接口级别）
-    url: None
-    method: None
+  get_access_token: #函数（接口级别）
+    url: cgi-bin/gettoken
+    method: GET
 MemberManagement:
   read_member:
     url: cgi-bin/user/get

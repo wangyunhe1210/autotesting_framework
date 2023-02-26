@@ -1,11 +1,12 @@
-import inspect
+# from libs.login_token import Login
+import os
+from configs.dir_path import configs_path
+from utils.yaml_handle import read_yaml
+from libs.login_token import Login
 
-class test_cls:
-    def test_func(self):
-        fun_name = inspect.stack()[1][3]
-        print(fun_name)
-    def use_func(self):
-        self.test_func()
+# login = Login()
+# res = login.get_access_token(os.path.join(configs_path, 'access_token.yaml'))
 
-c = test_cls()
-c.use_func()
+
+login = Login()
+login.get_access_token(os.path.join(configs_path, 'access_token.yaml'))
