@@ -5,7 +5,8 @@ import requests
 from utils.yaml_handle import read_yaml
 import inspect
 from configs.config import HOST
-from libs.login_token import get_access_token
+import traceback
+from utils.logging_handle import log
 
 
 class BaseApi:
@@ -21,6 +22,7 @@ class BaseApi:
             resp = requests.request(method=data['method'], url=f'{HOST}' + data['url'], params=inData)
             return resp.json()
         except Exception as error:
+            log.error(traceback.format_exc())
             raise error
 
     def query(self, inData):
@@ -45,4 +47,5 @@ class BaseAssert:
         try:
             assert res == exData
         except Exception as error:
+            log.error(traceback.format_exc())
             raise error
