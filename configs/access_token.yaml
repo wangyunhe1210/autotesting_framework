@@ -1,0 +1,7 @@
+login_info:
+  corpid: ww9c395f7fc48d9866
+  corpsecret: P4q05ResCx5qbGF8msryzamVi2K8yCvCDwBDEonqN7s
+  host: https://qyapi.weixin.qq.com/
+  method: GET
+  url: cgi-bin/gettoken
+token: Wrp_pdaseOQvkLHrsJ41ZPkgep4N_fRm2sZBpksnJYllZBaTlPpJdlXrdKXdMnrhRyCwht3LV7hvBM8lHaiYYLWxPtjGGNyMvsqG0dWpHIXs_mKWMQmy4mLdSHSl4ne1bMcTEDnx43ZfEo6QtN7waT6yH7GVeDGtTgXki1V-lVfVJ49jQJGYZkwBrgHw-i7DuZIHcsJqiaAHvnq8qjCktA
