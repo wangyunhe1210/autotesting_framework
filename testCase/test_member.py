@@ -4,6 +4,8 @@ from libs.member_management import MemberManagement
 from common.BaseApi import BaseAssert
 from configs.dir_path import report_path
 import os
+import allure
+import allure_pytest
 
 
 class TestMember(BaseAssert):
@@ -14,6 +16,6 @@ class TestMember(BaseAssert):
 
 
 if __name__ == '__main__':
-    pytest.main(['-vs', 'test_member.py'])
-    # pytest.main(['-vs', 'test_member.py', '--alluredir', os.path.join(report_path, 'report.html')])
-    # # os.system(f'allure serve {report_path}')
+    # pytest.main(['-vs', 'test_member.py'])
+    pytest.main(['-s', 'test_member.py', f'--alluredir={report_path}'])
+    # os.system(f'allure generate ../report/temp -0 ../reports')
